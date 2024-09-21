@@ -16,14 +16,15 @@ function showTime(sec, min, hr) {
 btnContent.addEventListener("click", (event) => {
   //   console.log(event.target.name);
   let eventName = event.target.name;
-  if (eventName === "start" && eventName) {
+  if (eventName === "start") {
+    clearInterval(idTime);
     idTime = setInterval(() => {
       eventStart = 0;
       sec++;
-      if (sec > 58) {
+      if (sec > 59) {
         min++;
         sec = 0;
-        if (min > 58) {
+        if (min > 59) {
           hr++;
           min = 0;
         }
@@ -32,11 +33,9 @@ btnContent.addEventListener("click", (event) => {
     }, 1000);
   } else if (eventName === "stop") {
     clearInterval(idTime);
-    eventStart = 1;
   } else {
     clearInterval(idTime);
     sec = min = hour = 0;
     showTime(sec, min, hr);
-    eventStart = 1;
   }
 });
