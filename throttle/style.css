@@ -1,0 +1,13 @@
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.container {
+  height: 300px;
+  width: 600px;
+  border: 1px solid black;
+  padding: 1rem;
+  overflow-y: auto;
+}
